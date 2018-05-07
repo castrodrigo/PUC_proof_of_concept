@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  microservice-disciplina:
+    image: castrodrigo/puc-microservice-disciplina
+    build: ./backend/microservice-disciplina
+    environment:
+      MONGO_DB_NAME: 'microservice-disciplina'
+      MONGO_CONNECTION_STRING: mongo
+      FLASK_APP: '/app/src/app.py'
+      FLASK_DEBUG: 'True'
+    ports:
+     - "9010:9010"
+    links:
+      - mongo
+    networks:
+      local:
+        ipv4_address: 10.14.0.20
+
+  mongo:
+    image: mvertes/alpine-mongo:3.2.10-3
+    ports:
+      - "27018:27017"
+    networks:
+      local:
+        ipv4_address: 10.14.0.90
+  mongo-express:
+    image: mongo-express:latest
+    links:
+      - mongo
+    ports:
+      - "8090:8081"
+    networks:
+      local:
+        ipv4_address: 10.14.0.91
+  
+networks:
+  local:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.14.0.0/16
+         gateway: 10.14.0.1
