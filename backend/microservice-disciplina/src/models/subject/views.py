@@ -27,13 +27,11 @@ def put_subject(id):
         payload = request.get_json()
         validate(payload, Subject.schema)
 
-        subject = Subject(
-            name=payload['name'],
-            summary=payload['description'],
-            script=None if 'script' not in payload else payload['script'],
-            total_hours=None if 'total_hours' not in payload else payload['total_hours'],
-            id=id
-        )
+        payload['script'] = None if 'script' not in payload else payload['script']
+        payload['total_hours'] = None if 'total_hours' not in payload else payload['total_hours']
+        payload['id'] = id
+
+        subject = Subject(**payload)
         subject.save()
 
         return jsonify(), 204
@@ -56,12 +54,10 @@ def post_subject():
         payload = request.get_json()
         validate(payload, Subject.schema)
 
-        subject = Subject(
-            name=payload['name'],
-            summary=payload['description'],
-            script=None if 'script' not in payload else payload['script'],
-            total_hours=None if 'total_hours' not in payload else payload['total_hours']
-        )
+        payload['script'] = None if 'script' not in payload else payload['script']
+        payload['total_hours'] = None if 'total_hours' not in payload else payload['total_hours']
+
+        subject = Subject(**payload)
         subject.save()
 
         return jsonify(), 204
