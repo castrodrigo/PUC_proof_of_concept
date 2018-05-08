@@ -2,7 +2,7 @@ version: '2'
 
 services:
   microservice-disciplina:
-    image: castrodrigo/puc-microservice-disciplina
+    image: docker.io/castrodrigo/puc-microservice-disciplina:latest
     build: ./backend/microservice-disciplina
     environment:
       MONGO_DB_NAME: 'microservice-disciplina'
@@ -16,6 +16,22 @@ services:
     networks:
       local:
         ipv4_address: 10.14.0.20
+
+  microservice-curso:
+    image: docker.io/castrodrigo/puc-microservice-curso:latest
+    build: ./backend/microservice-curso
+    environment:
+      MONGO_DB_NAME: 'microservice-curso'
+      MONGO_CONNECTION_STRING: mongo
+      FLASK_APP: '/app/src/app.py'
+      FLASK_DEBUG: 'True'
+    ports:
+     - "9020:9020"
+    links:
+      - mongo
+    networks:
+      local:
+        ipv4_address: 10.14.0.30
 
   mongo:
     image: mvertes/alpine-mongo:3.2.10-3
