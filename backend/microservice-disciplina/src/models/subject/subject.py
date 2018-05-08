@@ -1,3 +1,4 @@
+import datetime
 import uuid
 
 from src.common.bootstrap import MongoDB
@@ -16,7 +17,9 @@ class Subject(object):
             bibliography=None,
             script=None,
             total_hours=None,
-            id=None
+            id=None,
+            created_at=None,
+            updated_at=None,
     ):
         self.id = uuid.uuid4().hex if id is None else id
         self.name = name
@@ -26,12 +29,16 @@ class Subject(object):
         self.bibliography = bibliography
         self.script = script
         self.total_hours = total_hours
+        self.updated_at = str(datetime.datetime.now(datetime.timezone.utc)) \
+            if updated_at is None else updated_at
+        self.created_at = self.updated_at \
+            if created_at is None else created_at
 
     @staticmethod
     def get_subject_by_id(id):
         document = MongoDB.mongo_collection(Subject._collection).find_one(
             {'id': id}, {'_id': False}
-        );
+        )
         if document is None:
             raise SubjectNotFoundException('Subject not found')
         return document
@@ -50,7 +57,10 @@ class Subject(object):
 
     def save(self):
         try:
-            self.get_subject_by_id(self.id)
+            document = self.get_subject_by_id(self.id)
+            if 'created_at' in document:
+                self.created_at = document['created_at']
+
             return MongoDB.mongo_collection(self._collection).update(
                 {'id': self.id}, self.json()
             )
@@ -66,7 +76,9 @@ class Subject(object):
             'procedures': self.procedures,
             'bibliography': self.bibliography,
             'script': self.script,
-            'total_hours': self.total_hours
+            'total_hours': self.total_hours,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }
 
     def __repr__(self):
@@ -76,7 +88,9 @@ class Subject(object):
                'procedures {}, ' \
                'bibliography {}, ' \
                'script {}, ' \
-               'total hours {}>'.format(
+               'total hours {}' \
+               'created at {}' \
+               'updated at {}>'.format(
                     self.id,
                     self.name,
                     self.code,
@@ -84,7 +98,9 @@ class Subject(object):
                     self.procedures,
                     self.bibliography,
                     self.script,
-                    self.total_hours
+                    self.total_hours,
+                    self.created_at,
+                    self.updated_at
                 )
 
     schema = {
