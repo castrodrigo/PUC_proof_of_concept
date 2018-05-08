@@ -15,7 +15,8 @@ The implementation in this repo presumes a full virtualized set of services, usi
 All the microservices respepct the boundaries of scope and are responsible for their matter, consulting others when it is necessary to retrieve out-ot-scope information and append to data.
 
 #### Services Running
-- Microservice-Disciplina - Controller of subjects
+- Microservice-Disciplina - Controller of available subjects
+- Microservice-Curso - Controller of available courses
 
 ### Frontend Client
 Application using react with a series of components. Besides the natural components, there are a series of components who are directly connected to the microservices, being the access interface to handle their data trough the available API.
