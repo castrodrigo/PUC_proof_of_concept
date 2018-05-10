@@ -1,8 +1,21 @@
 version: '2'
 
 services:
+
+  gateway:
+    image: castrodrigo/puc-microservice-gateway:latest
+    build: ./backend/microservice-gateway-rest
+    links:
+      - microservice-disciplina
+      - microservice-curso
+    ports:
+      - "8080:80"
+    networks:
+      local:
+        ipv4_address: 10.14.0.10
+
   microservice-disciplina:
-    image: docker.io/castrodrigo/puc-microservice-disciplina:latest
+    image: castrodrigo/puc-microservice-disciplina:latest
     build: ./backend/microservice-disciplina
     environment:
       MONGO_DB_NAME: 'microservice-disciplina'
@@ -18,7 +31,7 @@ services:
         ipv4_address: 10.14.0.20
 
   microservice-curso:
-    image: docker.io/castrodrigo/puc-microservice-curso:latest
+    image: castrodrigo/puc-microservice-curso:latest
     build: ./backend/microservice-curso
     environment:
       MONGO_DB_NAME: 'microservice-curso'
