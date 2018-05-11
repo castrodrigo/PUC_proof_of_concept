@@ -22,8 +22,6 @@ services:
       MONGO_CONNECTION_STRING: mongo
       FLASK_APP: '/app/src/app.py'
       FLASK_DEBUG: 'True'
-    ports:
-     - "9010:9010"
     links:
       - mongo
     networks:
@@ -38,8 +36,6 @@ services:
       MONGO_CONNECTION_STRING: mongo
       FLASK_APP: '/app/src/app.py'
       FLASK_DEBUG: 'True'
-    ports:
-     - "9020:9020"
     links:
       - mongo
     networks:
