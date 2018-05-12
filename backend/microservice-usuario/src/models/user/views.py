@@ -1,4 +1,3 @@
-from flask import Blueprint
 from flask import request
 from flask import jsonify
 
@@ -6,10 +5,13 @@ from jsonschema import exceptions as jsonschema_exceptions
 from jsonschema import validate
 
 from src.common.util import Util
+from src.common.bootstrap import BaseBlueprint
+
 from src.models.user.user import User
 from src.models.user.exceptions import UserNotFoundException
 
-user_blueprint = Blueprint('users', __name__)
+
+user_blueprint = BaseBlueprint('users', __name__)
 
 
 @user_blueprint.route('/<string:id>', methods=['GET'])

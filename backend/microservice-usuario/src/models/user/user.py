@@ -3,9 +3,7 @@ import uuid
 
 from src.common.bootstrap import MongoDB
 from src.common.util import Util
-from src.models.user.exceptions import UserAlreadyRegisteredException
 from src.models.user.exceptions import UserIncorrectPasswordException
-from src.models.user.exceptions import UserInvalidEmailException
 from src.models.user.exceptions import UserNotFoundException
 
 
@@ -90,6 +88,7 @@ class User(object):
             'id': self.id,
             'name': self.name,
             'username': self.username,
+            'email': self.email,
             'password': self.password,
             'type': self.type,
             'created_at': self.created_at,
