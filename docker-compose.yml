@@ -42,6 +42,20 @@ services:
       local:
         ipv4_address: 10.14.0.30
 
+  microservice-usuario:
+    image: castrodrigo/puc-microservice-usuario:latest
+    build: ./backend/microservice-usuario
+    environment:
+      MONGO_DB_NAME: 'microservice-usuario'
+      MONGO_CONNECTION_STRING: mongo
+      FLASK_APP: '/app/src/app.py'
+      FLASK_DEBUG: 'True'
+    links:
+      - mongo
+    networks:
+      local:
+        ipv4_address: 10.14.0.40
+
   mongo:
     image: mvertes/alpine-mongo:3.2.10-3
     ports:
