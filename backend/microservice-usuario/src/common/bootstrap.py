@@ -1,7 +1,6 @@
 import os
 import pymongo
 
-from flask import Blueprint
 
 class MongoDB(object):
     client = None
@@ -17,15 +16,3 @@ class MongoDB(object):
         if cls.client is None:
             cls._connect()
         return cls.client[cls._database][collection]
-
-
-class BaseBlueprint(Blueprint):
-
-    def route(self, rule, **options):
-        def decorator(f):
-            new_rule = rule.rstrip('/')
-            new_rule_with_slash = '{}/'.format(new_rule)
-            super(BaseBlueprint, self).route(new_rule, **options)(f)
-            super(BaseBlueprint, self).route(new_rule_with_slash, **options)(f)
-            return f
-        return decorator
