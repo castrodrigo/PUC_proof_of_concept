@@ -8,8 +8,8 @@ from src.common.util import Util
 from src.common.decorator import BaseBlueprint
 
 from src.models.user.user import User
+from src.models.user.exceptions import UserIncorrectPasswordException
 from src.models.user.exceptions import UserNotFoundException
-
 
 user_blueprint = BaseBlueprint('users', __name__)
 
@@ -24,10 +24,18 @@ def authenticate():
             headers['password'] = request.headers['password']
         validate(headers, User.headers_schema)
 
-        document = User.get_users()
-        return jsonify(document), 200
+        user = User.get_user_by_username(headers['username'])
+        if not Util.check_hashed_password(headers['password'], user.password):
+            raise UserIncorrectPasswordException("Invalid Password")
+
+        response = {
+            'jwt_token': Util.encode_jwt_token(headers['username'])
+        }
+        return jsonify(response), 200
     except jsonschema_exceptions.ValidationError as e:
         return jsonify(Util.setup_response_body("Headers: {}".format(e.message))), 403
+    except UserIncorrectPasswordException as e:
+        return jsonify(Util.setup_response_body(e.message)), 403
     except UserNotFoundException as e:
         return jsonify(Util.setup_response_body(e.message)), 404
 
@@ -35,8 +43,8 @@ def authenticate():
 @user_blueprint.route('/<string:id>', methods=['GET'])
 def get_user(id):
     try:
-        document = User.get_user_by_id(id)
-        return jsonify(document), 200
+        user = User.get_user_by_id(id)
+        return jsonify(user.json(safe=True)), 200
     except UserNotFoundException as e:
         return jsonify(Util.setup_response_body(e.message)), 404
 

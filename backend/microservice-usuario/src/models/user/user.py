@@ -41,23 +41,23 @@ class User(object):
             raise UserIncorrectPasswordException("Invalid password")
         return True
 
-    @staticmethod
-    def get_user_by_id(id):
+    @classmethod
+    def get_user_by_id(cls, id):
         document = MongoDB.mongo_collection(User._collection).find_one(
             {'id': id}, {'_id': False}
         )
         if document is None:
             raise UserNotFoundException('User not found')
-        return document
+        return cls(**document)
 
-    @staticmethod
-    def get_user_by_username(username):
+    @classmethod
+    def get_user_by_username(cls, username):
         document = MongoDB.mongo_collection(User._collection).find_one(
             {'username': username}, {'_id': False}
         )
         if document is None:
             raise UserNotFoundException('User not found')
-        return document
+        return cls(**document)
 
     @classmethod
     def get_users(cls):
@@ -76,11 +76,14 @@ class User(object):
             document = self.get_user_by_id(self.id)
             if 'created_at' in document:
                 self.created_at = document['created_at']
+            if 'password' in document:
+                self.password = Util.hash_password(document['password'])
 
             return MongoDB.mongo_collection(self._collection).update(
                 {'id': self.id}, self.json()
             )
         except UserNotFoundException:
+            self.password = Util.hash_password(self.password)
             return MongoDB.mongo_collection(self._collection).insert(self.json())
 
     def json(self, safe=False):
