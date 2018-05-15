@@ -50,6 +50,9 @@ services:
       MONGO_CONNECTION_STRING: mongo
       FLASK_APP: '/app/src/app.py'
       FLASK_DEBUG: 'True'
+      JWT_EXPIRE_TIME: 3600
+      JWT_SECRET: 'somerandomstring'
+      JWT_ISSUER: 'University'
     links:
       - mongo
     networks:
