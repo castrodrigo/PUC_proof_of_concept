@@ -22,6 +22,7 @@ services:
       MONGO_CONNECTION_STRING: mongo
       FLASK_APP: '/app/src/app.py'
       FLASK_DEBUG: 'True'
+      JWT_SECRET: 'somerandomstring'
     links:
       - mongo
     networks:
@@ -36,6 +37,7 @@ services:
       MONGO_CONNECTION_STRING: mongo
       FLASK_APP: '/app/src/app.py'
       FLASK_DEBUG: 'True'
+      JWT_SECRET: 'somerandomstring'
     links:
       - mongo
     networks:
