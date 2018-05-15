@@ -6,10 +6,13 @@ from jsonschema import exceptions as jsonschema_exceptions
 from jsonschema import validate
 
 from src.common.util import Util
+from src.common.decorator import BaseBlueprint
+from src.common.decorator import AuthCheck as auth_decorator
+
 from src.models.course.course import Course
 from src.models.course.exceptions import CourseNotFoundException
 
-course_blueprint = Blueprint('courses', __name__)
+course_blueprint = BaseBlueprint('courses', __name__)
 
 
 @course_blueprint.route('/<string:id>', methods=['GET'])
@@ -22,6 +25,7 @@ def get_course(id):
 
 
 @course_blueprint.route('/<string:id>', methods=['PUT'])
+@auth_decorator.check_auth_token
 def put_course(id):
     try:
         payload = request.get_json()
@@ -48,6 +52,7 @@ def get_courses():
 
 
 @course_blueprint.route('/', methods=['POST'])
+@auth_decorator.check_auth_token
 def post_course():
     try:
         payload = request.get_json()
