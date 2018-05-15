@@ -6,10 +6,13 @@ from jsonschema import exceptions as jsonschema_exceptions
 from jsonschema import validate
 
 from src.common.util import Util
+from src.common.decorator import BaseBlueprint
+from src.common.decorator import AuthCheck as auth_decorator
+
 from src.models.subject.subject import Subject
 from src.models.subject.exceptions import SubjectNotFoundException
 
-subject_blueprint = Blueprint('subjects', __name__)
+subject_blueprint = BaseBlueprint('subjects', __name__)
 
 
 @subject_blueprint.route('/<string:id>', methods=['GET'])
@@ -22,6 +25,7 @@ def get_subject(id):
 
 
 @subject_blueprint.route('/<string:id>', methods=['PUT'])
+@auth_decorator.check_auth_token
 def put_subject(id):
     try:
         payload = request.get_json()
@@ -49,6 +53,7 @@ def get_subjects():
 
 
 @subject_blueprint.route('/', methods=['POST'])
+@auth_decorator.check_auth_token
 def post_subject():
     try:
         payload = request.get_json()
