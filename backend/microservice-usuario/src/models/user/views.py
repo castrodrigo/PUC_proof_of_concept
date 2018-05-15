@@ -6,10 +6,12 @@ from jsonschema import validate
 
 from src.common.util import Util
 from src.common.decorator import BaseBlueprint
+from src.common.decorator import AuthCheck as auth_decorator
 
 from src.models.user.user import User
 from src.models.user.exceptions import UserIncorrectPasswordException
 from src.models.user.exceptions import UserNotFoundException
+
 
 user_blueprint = BaseBlueprint('users', __name__)
 
@@ -41,6 +43,7 @@ def authenticate():
 
 
 @user_blueprint.route('/<string:id>', methods=['GET'])
+@auth_decorator.check_auth_token
 def get_user(id):
     try:
         user = User.get_user_by_id(id)
@@ -50,6 +53,7 @@ def get_user(id):
 
 
 @user_blueprint.route('/', methods=['GET'])
+@auth_decorator.check_auth_token
 def get_users():
     try:
         response = User.get_users()
@@ -59,6 +63,7 @@ def get_users():
 
 
 @user_blueprint.route('/', methods=['POST'])
+@auth_decorator.check_auth_token
 def post_user():
     try:
         payload = request.get_json()
