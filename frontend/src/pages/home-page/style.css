@@ -1,0 +1,10 @@
+
+.cover-container {
+  background-image: url('https://images.pexels.com/photos/220351/pexels-photo-220351.jpeg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: block;
+  height: 100px;
+}

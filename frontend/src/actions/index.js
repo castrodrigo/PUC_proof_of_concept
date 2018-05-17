@@ -18,3 +18,33 @@ export function fetchCourses() {
         payload: request
     }
 }
+
+export function fetchCourse(id) {
+    const url = `${ROUTE_COURSE}${id}`;
+    const request = axios.get(url);
+
+    return {
+        type: FETCH_COURSE,
+        payload: request
+    }
+}
+
+export function fetchSubjects() {
+    const url = `${ROUTE_SUBJECTS}`;
+    const request = axios.get(url);
+
+    return {
+        type: FETCH_SUBJECTS,
+        payload: request
+    }
+}
+
+export function fetchSubject(id) {
+    const url = `${ROUTE_SUBJECTS}${id}`;
+    const request = axios.get(url);
+
+    return {
+        type: FETCH_SUBJECT,
+        payload: request
+    }
+}
