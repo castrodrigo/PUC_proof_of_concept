@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/header/'
+import Footer from '../components/footer/'
 import CourseList from '../containers/course_list'
 
 export default class CoursePage extends Component {
@@ -7,7 +8,8 @@ export default class CoursePage extends Component {
     return (
       <div>
         <Header />
-        <CourseList />  
+        <CourseList />
+        <Footer />  
       </div>
     );
   }

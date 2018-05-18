@@ -1,10 +1,28 @@
-
-.cover-container {
+.cover_container {
   background-image: url('https://images.pexels.com/photos/220351/pexels-photo-220351.jpeg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   display: block;
-  height: 100px;
+  height: 100vh;
+  min-height: 700px;
+  clear: both;
+}
+
+.box{
+  background: rgba(34, 34, 46, 0.6);
+  padding: 30px 16px;
+  color: blanchedalmond;
+  border-radius: 5px;     
+}
+
+.box_inner{
+  margin-bottom: 30px;
+}
+
+.content_custom{
+  margin: 40px;
+  display: block;
+  clear: both;
 }

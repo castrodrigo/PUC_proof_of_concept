@@ -1,18 +1,21 @@
-td, th {
-    vartical-align: middle !important;
-    text-align: center !important;
-}
-
-.input-group {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-svg {
-    height:150px;
-}
-
-td:first-of-type, td:first-of-type div {
-    height: 200px;
-    width: 250px;
-}
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin-bottom: 60px;
+  }
+  .container{
+    margin: 0px;
+    padding: 0px;
+    min-width: 100%;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    padding: 0px 16px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #343a40;  
+  }
