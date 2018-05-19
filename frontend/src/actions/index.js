@@ -20,7 +20,7 @@ export function fetchCourses() {
 }
 
 export function fetchCourse(id) {
-    const url = `${ROUTE_COURSE}${id}`;
+    const url = `${ROUTE_COURSES}${id}`;
     const request = axios.get(url);
 
     return {

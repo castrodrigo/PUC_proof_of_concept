@@ -6,7 +6,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <span className="text-muted">Universidade, todos os direitos reservados - 2018</span>
+        <span className="text-muted">Universidade @2018</span>
     </footer>
     );
   }

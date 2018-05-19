@@ -1,0 +1,39 @@
+.cover_container {
+  background-image: url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: block;
+  height: 100vh;
+  min-height: 700px;
+  clear: both;
+}
+
+.box{
+  background: rgba(34, 34, 46, 0.9);
+  padding: 30px 16px;
+  color: blanchedalmond;
+  border-radius: 5px;     
+}
+
+.box_inner{
+  margin-bottom: 30px;
+  background-color: rgba(54, 118, 141, 0.2);
+  padding: 40px 0;
+  border-radius: 6px;
+}
+
+.box_inner li{
+  margin-bottom: 10px;
+}
+
+.box_inner li a{
+  color: burlywood;
+}
+
+.content_custom{
+  margin: 40px;
+  display: block;
+  clear: both;
+}

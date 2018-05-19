@@ -6,7 +6,8 @@ import ReduxPromise from 'redux-promise';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import HomePage from './pages/home-page/';
-import CoursePage from './pages/course-page';
+import CoursePage from './pages/course-page/';
+import CourseSelected from './pages/course-selected-page/';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -15,6 +16,7 @@ const AppRouter = () => (
   <main>
     <Switch>
       <Route exact path='/' component={HomePage}/>
+      <Route path='/cursos/:id' component={CourseSelected}/>
       <Route path='/cursos' component={CoursePage}/>
     </Switch>
   </main>

@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCourses } from '../actions/index';
 
 class CourseList extends Component {
     renderCourse(course) {
+        const id = course.id;
         const code = course.code;
         const name = course.name;
         const semesters = course.semesters;
         
         return (
-            <li key={name}>
-                <span>{code} - {name}: {semesters} períodos</span>
+            <li key={id}>
+                <Link to={ 'cursos/' + id }> {code} - {name}: {semesters} períodos</Link>
             </li>
         );
     }
@@ -31,7 +33,7 @@ class CourseList extends Component {
                 </div>
             );
         } else {
-            return <div> Loading </div>
+            return <div> Loading... </div>
         }
         
     }
