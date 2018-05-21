@@ -7,7 +7,6 @@ import { fetchSubject } from '../actions/index';
 class SubjectInfo extends Component {
     constructor(props) {
         super(props)
-        this.state = {subjectData: ''}
     }
 
     componentDidMount() {
@@ -15,16 +14,15 @@ class SubjectInfo extends Component {
     }
 
     render() {
-        this.state['subjectData'] = this.props.subject;
         if (typeof this.props.subject[0] !== 'undefined'){
-            const subject = this.props.subject[0];
+            const item = this.props.subject[0];
             const id = this.props.id;
             const courseId = this.props.courseId;
             const semester = this.props.semester;
             return (
                 <li key={ id }>
                     <Link to={'/disciplinas/' + id + "?course=" + courseId}>
-                        {subject.code}::{subject.name} - {semester}º período
+                        {item.code}::{item.name} - {semester}º período
                     </Link>    
                 </li>
             );

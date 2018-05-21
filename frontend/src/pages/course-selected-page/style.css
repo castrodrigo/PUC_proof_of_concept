@@ -5,8 +5,7 @@
   -o-background-size: cover;
   background-size: cover;
   display: block;
-  height: 100vh;
-  min-height: 700px;
+  min-height: 100hv;
   clear: both;
 }
 
