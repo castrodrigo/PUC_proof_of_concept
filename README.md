@@ -3,8 +3,8 @@
 ## Overview
 The idea of this repository is to have a POC application running to present a Specialization Course Thesis.
 The application consists of:
-- Backend Microservice Cluster
-- Frontend Client
+- Backend Microservice Cluster.
+- Frontend Client.
 
 ### Backend Microservice Cluster
 A collection of microservices that together deliver the objective of the application.
@@ -15,16 +15,16 @@ The implementation in this repo presumes a full virtualized set of services, usi
 All the microservices respepct the boundaries of scope and are responsible for their matter, consulting others when it is necessary to retrieve out-ot-scope information and append to data.
 
 #### Services Running
-- Microservice-Disciplina - Controller of available subjects
-- Microservice-Curso - Controller of available courses
-- Microservice-Usuario - Controller of user management and auth generation
-- Microservice-Gateway - Route manager for all services
+- Microservice-Disciplina - Controller of available subjects.
+- Microservice-Curso - Controller of available courses.
+- Microservice-Usuario - Controller of user management and auth generation.
+- Microservice-Gateway - Route manager for all services.
 
 ### Frontend Client
 Application using React with a series of components and Redux to manage the State. Besides the natural components, there are a series of components who are directly connected to the microservices, being the access interface to handle their data trough the available API.
 
 #### Application Running
-- Frontend - Web Application to access the Gateway methods
+- Frontend - Web Application to access the Gateway methods.
 
 ## Running
 Running the application will make it possible to access public and private methods through the API and use the Frontend to navigate alongside data that is gathered from public endpoints.
@@ -37,18 +37,18 @@ You need to have the following applications installed in your environment.
 - NPM [https://www.npmjs.com/]
 
 ### To Run
-- Clone this repo
-- Enter the folder
+- Clone this repo.
+- Enter the folder.
 
 #### Backend
-- Open the terminal, enter the folder and type `docker-compose up`
+- Open the terminal, enter the folder and type `docker-compose up`.
 - Now the backend applications will be running.
-- Keep the terminal open and running.
+- Keep the terminal open and running. The application will be running at `http://localhost:8080/`.
 
 #### Frontend
-- Open the terminal, enter the folder and then enter in *frontend* folder
-- Type `npm install`to download all necessary packages to run the application
-- Type `npm start`to start the application
+- Open the terminal, enter the folder and then enter in *frontend* folder.
+- Type `npm install`to download all necessary packages to run the application.
+- Type `npm start`to start the application.
 - After complete go to the browser at `http://localhost:9000/` and check it running.
 
 #### API Testing
