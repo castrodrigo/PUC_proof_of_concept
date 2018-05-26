@@ -1,0 +1,427 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-05-26T19:44:32.018Z",
+	"__export_source": "insomnia.desktop.app:v5.16.2",
+	"resources": [
+		{
+			"_id": "wrk_2ca09fb1467b46558e1cb27a5db51add",
+			"created": 1526071096602,
+			"description": "",
+			"modified": 1526071096602,
+			"name": "Insomnia",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_f49b894355d24bd1810e1ee1d6161aaf",
+			"color": null,
+			"created": 1526071096638,
+			"data": {},
+			"isPrivate": false,
+			"modified": 1526071096638,
+			"name": "New Environment",
+			"parentId": "wrk_2ca09fb1467b46558e1cb27a5db51add",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_969e8f9de7ec41a489a7126730f3e503",
+			"cookies": [],
+			"created": 1526071096715,
+			"modified": 1526071096715,
+			"name": "Default Jar",
+			"parentId": "wrk_2ca09fb1467b46558e1cb27a5db51add",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"created": 1526071118908,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1526071118908,
+			"modified": 1527363484703,
+			"name": "PUC-Gateway",
+			"parentId": "wrk_2ca09fb1467b46558e1cb27a5db51add",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_29429e256f1d4ae6a8c4db7f855e3b28",
+			"authentication": {},
+			"body": {},
+			"created": 1526071162381,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1526071514241.25,
+			"method": "GET",
+			"modified": 1526505928352,
+			"name": "Listar Cursos",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/cursos",
+			"_type": "request"
+		},
+		{
+			"_id": "req_42a3bc6eb2634296beeefd648ff7d150",
+			"authentication": {},
+			"body": {},
+			"created": 1526071232658,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1526071463204.5,
+			"method": "GET",
+			"modified": 1526762958437,
+			"name": "Exibir Curso",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/cursos/826fd140084a47eb95eb63ba32140b2f",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0405050323864d97abfe63b760be8513",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n            \"code\": \"SII189\",\n            \"name\": \"Sistemas de Informação\",\n            \"semesters\": 8,\n            \"subjects\": [\n                {\n                    \"id\": \"5b800c2b7c504092b5ff5f80de154a52\",\n                    \"semester\": 1\n                },\n                {\n                    \"id\": \"79fad34d18ec4b9dba489a455088f4fd\",\n                    \"semester\": 1\n                },\n                {\n                    \"id\": \"dddfcb32e51245f2b88912d9bc5b9a70\",\n                    \"semester\": 1\n                },\n                {\n                    \"id\": \"990dd9d85f214f94b412978daad5b314\",\n                    \"semester\": 2\n                },\n                {\n                    \"id\": \"990dd9d85f214f94b412978daad66664\",\n                    \"semester\": 2\n                },\n                {\n                    \"id\": \"9777d9d85f214f94b412978daad66664\",\n                    \"semester\": 3\n                },\n                {\n                    \"id\": \"ccc7d9d85f214f94b412978daad66664\",\n                    \"semester\": 3\n                }\n            ],\n            \"summary\": \"Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.\",\n            \"type\": \"GRADUACAO\"\n        }"
+			},
+			"created": 1526071300715,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_10dc1dc45a1849bca8b5023db882e9fd",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_caf4d33442ae456d8cb819bff2245a97",
+					"name": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1MjczNjE5MzMsImlhdCI6MTUyNzM2MTkzMywibmFtZSI6IjIwMTgtcm9kcmlnbyIsImV4cCI6MTUyNzM2NTUzMywiaXNzIjoiVW5pdmVyc2l0eSJ9.DEWFg1wLTMBxipNAtun9FjJXQHDjeNVuX7gwgML9FBY"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071300715,
+			"method": "POST",
+			"modified": 1527362863215,
+			"name": "Criar Curso",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/cursos/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6bb9a688c22a46969f7b0f2f5f3b4f1a",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n            \"code\": \"CIC098\",\n            \"name\": \"Ciências Contábeis\",\n            \"semesters\": 8,\n            \"subjects\": [\n                {\n                    \"id\": \"5b800c2b7c504092b5ff5f80de154a52\",\n                    \"semester\": 1\n                },\n                {\n                    \"id\": \"79fad34d18ec4b9dba489a455088f4fd\",\n                    \"semester\": 1\n                },\n                {\n                    \"id\": \"dddfcb32e51245f2b88912d9bc5b9a70\",\n                    \"semester\": 2\n                },\n                {\n                    \"id\": \"990dd9d85f214f94b412978daad5b314\",\n                    \"semester\": 2\n                },\n                {\n                    \"id\": \"990dd9d85f214f94b412978daad66664\",\n                    \"semester\": 2\n                },\n                {\n                    \"id\": \"9777d9d85f214f94b412978daad66664\",\n                    \"semester\": 3\n                },\n                {\n                    \"id\": \"ccc7d9d85f214f94b412978daad66664\",\n                    \"semester\": 4\n                }\n            ],\n            \"summary\": \"Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.\",\n            \"type\": \"GRADUACAO\"\n        }"
+			},
+			"created": 1526071361131,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_28f29ba26eb64d44a70edde7953aa906",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_cabef0ccbc5d45edbbf6450b8a1e0f2c",
+					"name": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1MjczNjE5MzMsImlhdCI6MTUyNzM2MTkzMywibmFtZSI6IjIwMTgtcm9kcmlnbyIsImV4cCI6MTUyNzM2NTUzMywiaXNzIjoiVW5pdmVyc2l0eSJ9.DEWFg1wLTMBxipNAtun9FjJXQHDjeNVuX7gwgML9FBY"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071231548.5,
+			"method": "PUT",
+			"modified": 1527362962401,
+			"name": "Editar Curso",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/cursos/79fad34d18ec4b9dba489a455088f4fds",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c0d296ca09b847e1825e6a13c8d36cdd",
+			"authentication": {},
+			"body": {},
+			"created": 1526071456155,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1526071565303,
+			"method": "GET",
+			"modified": 1526071600784,
+			"name": "Exibir Disciplina",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/disciplinas/32d384241af0444dad245ba72eb376e1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3dc439b3f5a94ccba0ad61e4d181730f",
+			"authentication": {},
+			"body": {},
+			"created": 1526071476440,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1526071565328,
+			"method": "GET",
+			"modified": 1526071595658,
+			"name": "Listar Disciplinas",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/disciplinas/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1da96b7d40f646f7805319e37e59c330",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"name\":\"Matemática 2\",\n  \"code\": \"MM02422B\",\n  \"summary\":\"Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.\"\n}"
+			},
+			"created": 1526071565278,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_59cb6907ee424115a982b10de14e7002",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_8ca9db2c6be94079a0cf1aa21c422435",
+					"name": "Authorization",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiMjAxOC1tYXJpYSIsImlhdCI6MTUyNjg0MTA4MywibmJmIjoxNTI2ODQxMDgzLCJleHAiOjE1MjY4NDQ2ODMsImlzcyI6IlVuaXZlcnNpdHkifQ.cgxW4jdPy7Aee6P-KbZdptdVkkS3UYr9oXdWIZeh9QI"
+				},
+				{
+					"id": "pair_139c68a6806f4da99ac92a25a677350b",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071565278,
+			"method": "POST",
+			"modified": 1526841104823,
+			"name": "Criar Disciplina",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/disciplinas/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_08bb338016d94863a442fb90f3bc7019",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"name\":\"Matéria Lorem Ipsum\",\n  \"code\":\"MLIP\",\n  \"summary\":\"Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.Duis sed finibus ipsum, ut elementum magna.\",\n\t\"procedures\":\"Nullam posuere est quam, eget feugiat turpis ultrices nec..\",\n\t\"script\":\"Etiam at ante sit amet nisi dapibus pretium. Pellentesque a condimentum odio, sit amet pellentesque justo.\"\n}"
+			},
+			"created": 1526071785068,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_c403624e76a241f79e6c1bc7b1d9b40f",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_3fbd8ab7500b4ac4bc4a5b7f86e15d00",
+					"name": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1MjczNjE5MzMsImlhdCI6MTUyNzM2MTkzMywibmFtZSI6IjIwMTgtcm9kcmlnbyIsImV4cCI6MTUyNzM2NTUzMywiaXNzIjoiVW5pdmVyc2l0eSJ9.DEWFg1wLTMBxipNAtun9FjJXQHDjeNVuX7gwgML9FBY"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071539759.625,
+			"method": "PUT",
+			"modified": 1527363259161,
+			"name": "Editar Disciplina",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/disciplinas/79fad34d18ec4b9dba489a455088f4fd",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dfa4c54ed7154ce7bf75193e884c6d4d",
+			"authentication": {},
+			"body": {},
+			"created": 1526414352816,
+			"description": "",
+			"headers": [
+				{
+					"disabled": false,
+					"id": "pair_6ffdeb9cde0c44cb81fe107c4c4f392a",
+					"name": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1MjczNjE5MzMsImlhdCI6MTUyNzM2MTkzMywibmFtZSI6IjIwMTgtcm9kcmlnbyIsImV4cCI6MTUyNzM2NTUzMywiaXNzIjoiVW5pdmVyc2l0eSJ9.DEWFg1wLTMBxipNAtun9FjJXQHDjeNVuX7gwgML9FBY"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071231498.5,
+			"method": "GET",
+			"modified": 1527363764519,
+			"name": "Listar Usuarios",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/usuarios",
+			"_type": "request"
+		},
+		{
+			"_id": "req_18ea150d22f249b9adc3ecdf1412ba97",
+			"authentication": {},
+			"body": {},
+			"created": 1526414363006,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_ca4717df746b44b89c30015ee6198239",
+					"name": "Authorization",
+					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1MjY0MTk4NjgsIm5hbWUiOiIyMDE4LW1hcmlhIiwiZXhwIjoxNTI2NDIzNDY4LCJpc3MiOiJVbml2ZXJzaXR5IiwiaWF0IjoxNTI2NDE5ODY4fQ.Azv5sjiNkPIDbA0WOmydBHAudKw7lgy6uyhuEoSLdrI"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071231448.5,
+			"method": "GET",
+			"modified": 1526419882467,
+			"name": "Exibir Usuario",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/usuarios/f2172f1ff76c474297216001eba54b0c",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c3c5e5c33dc7487caf169495071d87f4",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"name\":\"Rodrigo\",\n  \"username\": \"2018-rodrigo\",\n\t\"email\": \"castrodrigo@yahoo.com.br\",\n\t\"password\": \"ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413\",\n  \"type\":\"staff\"\n}"
+			},
+			"created": 1526414370317,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_59cb6907ee424115a982b10de14e7002",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_4de9036fd22548138be1320c7edb10b9",
+					"name": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1MjczNjE4NzQsImlhdCI6MTUyNzM2MTg3NCwibmFtZSI6IjIwMTgtbWFyaWEiLCJleHAiOjE1MjczNjU0NzQsImlzcyI6IlVuaXZlcnNpdHkifQ.GDO3SRq0pgUh4NYrYFRJpe3LNDR0YNJNGDp6PY8AjiQ"
+				},
+				{
+					"id": "pair_e083e632e6f04433979fbac6cf466e94",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071231398.5,
+			"method": "POST",
+			"modified": 1527361913138,
+			"name": "Criar Usuario",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/usuarios",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8c1bfc5d96f74d11b3d22ba47d089d84",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1526414377836,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_59cb6907ee424115a982b10de14e7002",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_8b423741e6ac4bdf957e74b1664e13c8",
+					"name": "username",
+					"value": "2018-rodrigo"
+				},
+				{
+					"disabled": false,
+					"id": "pair_2691aa303fa54af9868f0274278ebe65",
+					"name": "password",
+					"value": "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526071231348.5,
+			"method": "POST",
+			"modified": 1527361927198,
+			"name": "Autenticar",
+			"parameters": [],
+			"parentId": "fld_36c5f79d147448f5978191ced6b0d40d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8080/v1/usuarios/autenticar/",
+			"_type": "request"
+		}
+	]
+}
